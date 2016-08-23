@@ -1,1 +1,100 @@
+body{
+	background: #52D2BC;
+}
+.title{
+	text-align: center;
+	color: white;
+}
 
+.home-info{
+	margin-top: 20px;
+}
+
+.location{
+	text-align: center;
+}
+
+.location span{
+	font-size: 22px;
+	color: #FF7276;
+}
+.card{
+	width: 300px;
+	height: 400px;
+	background-color: white;
+	text-align: center;
+	margin-bottom: 20px;
+	border-radius: 8px;
+
+}
+
+.icons{
+	height: 100px;
+	width: 100px;
+	margin: auto;
+}
+
+.icon{
+	width: 100%;
+	height: 100%;
+	color: green;
+}
+
+.unit{
+	width: 30px;
+	height: 30px;
+}
+
+.unit-icon{
+	width: 100%;
+	height: 100%;
+}
+
+.weather-cards{
+	margin-top: 20px;
+	display: -webkit-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+
+.temperature{
+	display: -webkit-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.temp-degree{
+	line-height: 30px;
+	font-size: 18px;
+}
+.temp-container{
+	margin: auto;
+}
+.unit-selector{
+	display: -webkit-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin-top: 20px;
+
+}
+.selector-label{
+	margin-right: 20px;
+	margin-left: 10px;
+	font-size: 18px;
+	color: #EFD19F;
+}
+
+.dd{
+	font-size: 22px;
+	text-decoration: bold;
+}
+
+.desc{
+	font-size: 18px;
+	text-decoration: italic;
+}
