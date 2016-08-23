@@ -24,7 +24,8 @@ app.post('/', function(req, res){
 		     .exclude('currently,minutely,hourly')                                
 		    .get()        
 		    .then(response => {   
-		        res.json(JSON.parse(response));
+		    	var res = JSON.parse(response)
+		        res.json(res.data.daily.data);
 		    })
 	    .catch(err => {                 
 	        console.log(err)

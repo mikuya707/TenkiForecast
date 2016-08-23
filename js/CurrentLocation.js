@@ -21,15 +21,17 @@ var CurrentLocation = React.createClass({
 			var api_key = process.env.GOOGLE_API_KEY;
 			var latlng = lat+"," + lng;
 
-			var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latlng + "&key="+api_key
+			var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+api_key
 			axios.get(url).then((result) => {
-				var addr = result.data.results[0].formatted_address
-				var data = addr.split(',')
-				var city = data[1]
-				var country = data[3]
-				UIService.setLocation({latitude: lat, longitude: lng, city, country});
-				this.setState({city, country})			
-    
+				if(result){
+					var addr = result.data.results[0].formatted_address
+					var data = addr.split(',')
+					var city = data[1]
+					var country = data[3]
+					UIService.setLocation({latitude: lat, longitude: lng, city, country});
+					this.setState({city, country})			
+				}
+				
     		})
 			
 		}, function(err){
