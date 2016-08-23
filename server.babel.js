@@ -4,9 +4,6 @@ const bodyParser = require('body-parser')
 
 const app = express();
 const ForecastIO = require('forecast-io')
-const forecast = new ForecastIO("39e638018534b306f3c815a2f375247d")
-
-
 
 app.use('/', express.static('./'));
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -15,7 +12,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 // app.set('DARK_SKY_API_KEY', "YOUR API KEY HERE")
 // app.set('GOOGLE_API_KEY', "YOUR API KEY HERE")
-
+const forecast = new ForecastIO(process.env.DARK_SKY_API_KEY)
 
 app.post('/', function(req, res){
 		var location = req.body.location;
