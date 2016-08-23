@@ -28,6 +28,8 @@ app.post('/', function(req, res){
 		    .get()        
 		    .then(response => {   
 		    	var res = JSON.parse(response)
+		    	console.log('weather res is', res)
+
 		        res.json(res.data.daily.data);
 		    })
 	    .catch(err => {                 
