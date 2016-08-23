@@ -24,7 +24,7 @@ var CurrentLocation = React.createClass({
 			var latlng = lat+"," + lng;
 			axios.get('/key').then((res) => {
 				console.log('get res', res)
-				var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+ res.key
+				var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+ res.data.key
 				axios.get(url).then((result) => {
 					if(result){
 						console.log('result for location data is', result)
