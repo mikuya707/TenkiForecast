@@ -16,6 +16,7 @@ var CurrentLocation = React.createClass({
 
 	componentWillMount: function(){
 		axios.get('/').then((res) => {
+			console.log('get res', res)
 			this.setState({api_key: res.key})		
 		})
 	},
