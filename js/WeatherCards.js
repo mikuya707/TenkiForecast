@@ -55,6 +55,7 @@ var WeatherCards = React.createClass({
     })
   
   },
+  
   retriveWeatherData: function(loc, unit){
      axios.post('/', {location: this.state.location, unit: this.state.unit})
                  .then((res)=> {
