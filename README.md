@@ -2,6 +2,8 @@
 A responsive react application that displays weekly weather details based on user's geolocation
 
 check out [DEMO](https://thawing-dawn-52087.herokuapp.com/)
+
+
 *In order for the app to retrieve weather info properly, make sure you allow browser to access your geolocation in promped request.
 
 To run the application under root directory:
