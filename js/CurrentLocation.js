@@ -10,16 +10,10 @@ var CurrentLocation = React.createClass({
 			currentPosition: "",
 			city: "",
 			country: "",
-			api_key: ""
+
 		}
 	},
 
-	componentWillMount: function(){
-		axios.get('/key').then((res) => {
-			console.log('get res', res)
-			this.setState({api_key: res.key})		
-		})
-	},
 	componentDidMount: function(){
 		
 		navigator.geolocation.getCurrentPosition((position) => { 	
@@ -29,20 +23,24 @@ var CurrentLocation = React.createClass({
 			// var api_key = process.env.GOOGLE_API_KEY;
 			console.log('api key is', this.state.api_key)
 			var latlng = lat+"," + lng;
-
-			var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+ this.state.api_key
-			axios.get(url).then((result) => {
-				if(result){
-					console.log('result for location data is', result)
-					var addr = result.data.results[0].formatted_address
-					var data = addr.split(',')
-					var city = data[1]
-					var country = data[3]
-					UIService.setLocation({latitude: lat, longitude: lng, city, country});
-					this.setState({city, country})			
+			axios.get('/key').then((res) => {
+				console.log('get res', res)
+				var api_key = res.key
+				var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+ api_key
+				axios.get(url).then((result) => {
+					if(result){
+						console.log('result for location data is', result)
+						var addr = result.data.results[0].formatted_address
+						var data = addr.split(',')
+						var city = data[1]
+						var country = data[3]
+						UIService.setLocation({latitude: lat, longitude: lng, city, country});
+						this.setState({city, country})			
 				}
 				
     		})
+			})
+			
 			
 		}, function(err){
 			console.log('what is err',err);
