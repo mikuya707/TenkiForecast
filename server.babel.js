@@ -16,6 +16,9 @@ console.log('dark api key', process.env.DARK_SKY_API_KEY)
 console.log('google api key', process.env.GOOGLE_API_KEY)
 
 const forecast = new ForecastIO(process.env.DARK_SKY_API_KEY)
+app.get('/', function(req, res){
+	 res.json({key: process.env.GOOGLE_API_KEY});
+})
 
 app.post('/', function(req, res){
 		var location = req.body.location;
