@@ -13,8 +13,8 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-app.set('DARK_SKY_API_KEY', "39e638018534b306f3c815a2f375247d")
-app.set('GOOGLE_API_KEY', "AIzaSyBOJDZEPl3Fqyi_OwR9HlLDpTCvnOPcQjU")
+// app.set('DARK_SKY_API_KEY', "YOUR API KEY HERE")
+// app.set('GOOGLE_API_KEY', "YOUR API KEY HERE")
 
 
 app.post('/', function(req, res){
