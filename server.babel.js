@@ -30,10 +30,7 @@ app.post('/', function(req, res){
 		     .exclude('currently,minutely,hourly')                                
 		    .get()        
 		    .then(response => {   
-		    	var res = JSON.parse(response)
-		    	console.log('weather res is', res)
-
-		        res.json(res.data.daily.data);
+		        res.json(JSON.parse(response));
 		    })
 	    .catch(err => {                 
 	        console.log(err)
