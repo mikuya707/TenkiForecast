@@ -19,8 +19,9 @@ var CurrentLocation = React.createClass({
 			var lng = position.coords.longitude;
 	
 			var api_key = process.env.GOOGLE_API_KEY;
+			console.log('api key is', api_key)
 			var latlng = lat+"," + lng;
-			
+
 			var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng + "&key="+api_key
 			axios.get(url).then((result) => {
 				if(result){
